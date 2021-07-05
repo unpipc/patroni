@@ -45,6 +45,10 @@ bootstrap:
     loop_wait: 10
     retry_timeout: 10
     maximum_lag_on_failover: 1048576
+    # standby_cluster:
+    #   host: 10.0.218.122
+    #   port: 5432
+    #   primary_slot_name: patroni
     postgresql:
       use_pg_rewind: true
 #      use_slots: true
@@ -75,8 +79,8 @@ bootstrap:
   # For kerberos gss based connectivity (discard @.*$)
   #- host replication replicator 127.0.0.1/32 gss include_realm=0
   #- host all all 0.0.0.0/0 gss include_realm=0
-  - host replication replicator 127.0.0.1/32 md5
-  - host all all 0.0.0.0/0 md5
+  - host replication replicator 10.0.0.0/16 md5
+  - host all all 10.0.0.0/16 md5
 #  - hostssl all all 0.0.0.0/0 md5
 
   # Additional script to be launched after initial cluster creation (will be passed the connection URL as parameter)
@@ -91,8 +95,8 @@ bootstrap:
         - createdb
 
 postgresql:
-  listen: 127.0.0.1:5433
-  connect_address: 127.0.0.1:5433
+  listen: 127.0.0.1:5432
+  connect_address: 127.0.0.1:5432
   data_dir: data/postgresql1
   bin_dir: /usr/lib/postgresql/11/bin
 #  config_dir:
