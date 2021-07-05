@@ -98,7 +98,7 @@ bootstrap:
 
 postgresql:
   listen: 10.0.218.122:5432
-  connect_address: 127.0.0.1:5432
+  connect_address: 10.0.218.122:5432
   data_dir: data/postgresql0
   bin_dir: /usr/lib/postgresql/11/bin
 #  config_dir:
