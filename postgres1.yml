@@ -94,7 +94,7 @@ postgresql:
   listen: 127.0.0.1:5433
   connect_address: 127.0.0.1:5433
   data_dir: data/postgresql1
-#  bin_dir:
+  bin_dir: /usr/lib/postgresql/11/bin
 #  config_dir:
   pgpass: /tmp/pgpass1
   authentication:
