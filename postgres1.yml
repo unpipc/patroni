@@ -95,22 +95,22 @@ bootstrap:
         - createdb
 
 postgresql:
-  listen: 10.0.216.146:5432
-  connect_address: 10.0.216.146:5432
-  data_dir: data/postgresql1
+  listen: 127.0.0.1:5432
+  connect_address: 127.0.0.1:5432
+  data_dir: /var/lib/postgresql/11/main
+  config_dir: /etc/postgresql/11/main
   bin_dir: /usr/lib/postgresql/11/bin
-#  config_dir:
-  pgpass: /tmp/pgpass1
+  pgpass: /tmp/pgpass0
   authentication:
     replication:
-      username: replicator
-      password: rep-pass
+      username: tad
+      password: P@ssw0rd
     superuser:
-      username: postgres
-      password: zalando
+      username: tad
+      password: P@ssw0rd
     rewind:  # Has no effect on postgres 10 and lower
-      username: rewind_user
-      password: rewind_password
+      username: tad
+      password: P@ssw0rd
   # Server side kerberos spn
 #  krbsrvname: postgres
   parameters:
