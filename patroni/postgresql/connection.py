@@ -20,6 +20,7 @@ class Connection(object):
     def get(self):
         with self._lock:
             if not self._connection or self._connection.closed != 0:
+                logger.info(', '.join(f'{k}={v}' for k, v in self._conn_kwargs.items()))
                 self._connection = psycopg2.connect(**self._conn_kwargs)
                 self._connection.autocommit = True
                 self.server_version = self._connection.server_version
